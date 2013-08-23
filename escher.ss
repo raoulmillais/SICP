@@ -18,6 +18,13 @@
       (pic1 left dc)
       (pic2 right dc))))
 
+(define (right-push pic count scale)
+  (display count)
+  (if (= count 0)
+      pic
+      (let ((smaller (right-push pic (- count 1) scale)))
+       (beside pic smaller scale))))
+
 (define (make-picture seg-list)
   (lambda (rect dc)
     (for ([seg seg-list])
@@ -102,7 +109,7 @@
 
 (define triangle-pic (make-picture triangle-segments))
 
-((beside triangle-pic triangle-pic 0.5)
+((right-push triangle-pic 2 0.5)
   (make-rect
     (make-point 0 0)
     (make-point 500 0)
