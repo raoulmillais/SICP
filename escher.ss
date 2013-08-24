@@ -23,7 +23,7 @@
   (if (= count 0)
       pic
       (let ((smaller (right-push pic (- count 1) scale)))
-       (beside pic smaller scale))))
+       (beside smaller smaller scale))))
 
 (define (make-picture seg-list)
   (lambda (rect dc)
@@ -93,7 +93,6 @@
       (+
         (ycor (origin rect))
         (* (/ (ycor point) 1000) (- (ycor (vert rect)) (ycor (origin rect))))))))
-
 
 ;;
 ;; draw

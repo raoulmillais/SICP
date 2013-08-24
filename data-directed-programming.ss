@@ -1,6 +1,6 @@
 ;;
 ;; types
-;; 
+;;
 (define (attach-type type contents)
   (cons type contents))
 
@@ -12,7 +12,7 @@
 
 ;;
 ;; operator dispatch
-;; 
+;;
 ;; Modelled as a list of key value pairs where the key is the composite of the
 ;; operator and the type it operates on
 (define (make-key type operator)
@@ -46,7 +46,7 @@
 
 ;;
 ;; generic operators
-;; 
+;;
 (define (add x y operators)
   (operate 'add operators x y))
 
@@ -61,7 +61,7 @@
 
 ;;
 ;; ordinary numbers
-;; 
+;;
 (define (make-ordinary num)
   (attach-type 'ordinary num))
 
